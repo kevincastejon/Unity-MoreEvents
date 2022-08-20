@@ -5,14 +5,17 @@ Provides UnityEvent fields bound to triggers and collisions Unity messages metho
 - OnCollisionEnter
 - OnCollisionStay
 - OnCollisionExit
+
 ## Collision2DEvent
 - OnCollisionEnter2D
 - OnCollisionStay2D
 - OnCollisionExit2D
+
 ## TriggerEvent
 - OnTriggerEnter
 - OnTriggerStay
 - OnTriggerExit
+
 ## Trigger2DEvent
 - OnTriggerEnter2D
 - OnTriggerStay2D
