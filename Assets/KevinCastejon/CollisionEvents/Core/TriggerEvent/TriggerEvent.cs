@@ -17,33 +17,31 @@ namespace KevinCastejon.CollisionEvents
         private UnityEvent<Collider> _onExit = new UnityEvent<Collider>();
         [SerializeField]
         private List<Collider> _colliders;
+        [SerializeField]
+        private bool _useTagFilter;
+        [SerializeField]
+        private string _tag;
 
         public int TriggeringCollidersCount { get => isActiveAndEnabled ? _colliders.Count : 0; }
         public UnityEvent<Collider> OnEnter { get => _onEnter; }
         public UnityEvent<Collider> OnStay { get => _onStay; }
         public UnityEvent<Collider> OnExit { get => _onExit; }
-        private void OnEnable()
-        {
-            for (int i = 0; i < _colliders.Count; i++)
-            {
-                _onEnter.Invoke(_colliders[i]);
-            }
-        }
-        private void OnDisable()
-        {
-            for (int i = 0; i < _colliders.Count; i++)
-            {
-                _onExit.Invoke(_colliders[i]);
-            }
-        }
+        public bool UseTagFilter { get => _useTagFilter; set => _useTagFilter = value; }
+        
         private void OnTriggerEnter(Collider other)
         {
             _colliders.Add(other);
-            _onEnter.Invoke(other);
+            if (isActiveAndEnabled && (!_useTagFilter || other.CompareTag(_tag)))
+            {
+                _onEnter.Invoke(other);
+            }
         }
         private void OnTriggerStay(Collider other)
         {
-            _onStay.Invoke(other);
+            if (isActiveAndEnabled && (!_useTagFilter || other.CompareTag(_tag)))
+            {
+                _onStay.Invoke(other);
+            }
         }
         private void OnTriggerExit(Collider other)
         {
@@ -51,19 +49,21 @@ namespace KevinCastejon.CollisionEvents
             {
                 return;
             }
-
             _colliders.Remove(other);
-            _onExit.Invoke(other);
+            if (isActiveAndEnabled && (!_useTagFilter || other.CompareTag(_tag)))
+            {
+                _onExit.Invoke(other);
+            }
         }
-        public bool HasTriggeringCollider(Collider target)
+        public bool HasCollider(Collider target)
         {
             return _colliders.Contains(target);
         }
-        public int IndexOfTriggeringCollider(Collider collider)
+        public int IndexOfCollider(Collider collider)
         {
             return _colliders.IndexOf(collider);
         }
-        public Collider GetTriggeringColliderAt(int i)
+        public Collider GetCollider(int i)
         {
             return _colliders[i];
         }

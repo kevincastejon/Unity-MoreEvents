@@ -17,34 +17,31 @@ namespace KevinCastejon.CollisionEvents
         private UnityEvent<Collider> _onExit = new UnityEvent<Collider>();
         [SerializeField]
         private List<Collider> _colliders;
+        [SerializeField]
+        private bool _useTagFilter;
+        [SerializeField]
+        private string _tag;
 
         public int TriggeringCollidersCount { get => isActiveAndEnabled ? _colliders.Count : 0; }
         public UnityEvent<Collider> OnEnter { get => _onEnter; }
         public UnityEvent<Collider> OnStay { get => _onStay; }
         public UnityEvent<Collider> OnExit { get => _onExit; }
+        public bool UseTagFilter { get => _useTagFilter; set => _useTagFilter = value; }
 
-        private void OnEnable()
-        {
-            for (int i = 0; i < _colliders.Count; i++)
-            {
-                _onEnter.Invoke(_colliders[i]);
-            }
-        }
-        private void OnDisable()
-        {
-            for (int i = 0; i < _colliders.Count; i++)
-            {
-                _onExit.Invoke(_colliders[i]);
-            }
-        }
         private void OnCollisionEnter(Collision collision)
         {
             _colliders.Add(collision.collider);
-            _onEnter.Invoke(collision.collider);
+            if (isActiveAndEnabled && (!_useTagFilter || collision.collider.CompareTag(_tag)))
+            {
+                _onEnter.Invoke(collision.collider);
+            }
         }
         private void OnCollisionStay(Collision collision)
         {
-            _onStay.Invoke(collision.collider);
+            if (isActiveAndEnabled && (!_useTagFilter || collision.collider.CompareTag(_tag)))
+            {
+                _onStay.Invoke(collision.collider);
+            }
         }
         private void OnCollisionExit(Collision collision)
         {
@@ -52,21 +49,23 @@ namespace KevinCastejon.CollisionEvents
             {
                 return;
             }
-
             _colliders.Remove(collision.collider);
-            _onExit.Invoke(collision.collider);
+            if (isActiveAndEnabled && (!_useTagFilter || collision.collider.CompareTag(_tag)))
+            {
+                _onExit.Invoke(collision.collider);
+            }
         }
-        public bool HasTriggeringCollider(Collider target)
+        public bool HasCollider(Collider target)
         {
             return _colliders.Contains(target);
         }
-        public int IndexOfTriggeringCollider(Collider collider)
+        public int IndexOfCollider(Collider collider)
         {
             return _colliders.IndexOf(collider);
         }
-        public Collider GetTriggeringColliderAt(int i)
+        public Collider GetCollider(int index)
         {
-            return _colliders[i];
+            return _colliders[index];
         }
     }
 }

@@ -10,10 +10,10 @@ namespace KevinCastejon.CollisionEvents
         private SerializedProperty _onStay;
         private SerializedProperty _onExit;
         private SerializedProperty _colliders;
+        private SerializedProperty _useTagFilter;
+        private SerializedProperty _tag;
 
         private TriggerEvent _script;
-
-        private bool _eventFolded = true;
 
         private void OnEnable()
         {
@@ -21,44 +21,32 @@ namespace KevinCastejon.CollisionEvents
             _onStay = serializedObject.FindProperty("_onStay");
             _onExit = serializedObject.FindProperty("_onExit");
             _colliders = serializedObject.FindProperty("_colliders");
+            _useTagFilter = serializedObject.FindProperty("_useTagFilter");
+            _tag = serializedObject.FindProperty("_tag");
 
             _script = target as TriggerEvent;
         }
-
-        private bool isOneColliderTrigger()
-        {
-            Collider[] ownColliders = _script.GetComponent<Rigidbody>() == null ? _script.GetComponents<Collider>() : _script.GetComponentsInChildren<Collider>();
-            foreach (Collider col in ownColliders)
-            {
-                if (col.enabled && col.isTrigger)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public override void OnInspectorGUI()
         {
-            if (!isOneColliderTrigger())
-            {
-                EditorGUILayout.HelpBox("TriggerDetector needs at least one enabled collider with 'IsTrigger' checked", MessageType.Error);
-                return;
-            }
             serializedObject.Update();
-            _eventFolded = EditorGUILayout.BeginFoldoutHeaderGroup(_eventFolded, "Trigger events");
-            if (_eventFolded)
+            if (_tag.stringValue == "")
             {
-                EditorGUILayout.PropertyField(_onEnter);
-                EditorGUILayout.PropertyField(_onStay);
-                EditorGUILayout.PropertyField(_onExit);
+                _tag.stringValue = UnityEditorInternal.InternalEditorUtility.tags[0];
             }
-            EditorGUILayout.EndFoldoutHeaderGroup();
+            _useTagFilter.boolValue = EditorGUILayout.Toggle(new GUIContent("Use tag filter"), _useTagFilter.boolValue);
+            EditorGUI.BeginDisabledGroup(!_useTagFilter.boolValue);
+            EditorGUI.indentLevel++;
+            _tag.stringValue = EditorGUILayout.TagField(new GUIContent("Tag filter"), _tag.stringValue);
+            EditorGUI.indentLevel--;
+            EditorGUI.EndDisabledGroup();
+            EditorGUILayout.PropertyField(_onEnter);
+            EditorGUILayout.PropertyField(_onStay);
+            EditorGUILayout.PropertyField(_onExit);
 
             if (_script.isActiveAndEnabled)
             {
                 EditorGUI.BeginDisabledGroup(true);
-                EditorGUILayout.PropertyField(_colliders, new GUIContent("Colliding objects", "List of currently colliding objects"));
+                EditorGUILayout.PropertyField(_colliders, new GUIContent("Overlapping objects", "List of currently overlapping objects"));
                 EditorGUI.EndDisabledGroup();
             }
             serializedObject.ApplyModifiedProperties();

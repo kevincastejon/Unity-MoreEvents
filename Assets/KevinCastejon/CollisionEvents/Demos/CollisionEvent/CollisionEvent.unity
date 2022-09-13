@@ -490,6 +490,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _colliders: []
+  _useTagFilter: 0
+  _tag: Untagged
 --- !u!1 &1886575936
 GameObject:
   m_ObjectHideFlags: 0
