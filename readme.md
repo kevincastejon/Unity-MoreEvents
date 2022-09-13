@@ -1,6 +1,8 @@
 # CollisionEvents
 Provides **UnityEvent** fields bound to **triggers** and **collisions** Unity messages methods with optional **tag filtering**.
+
 Do not create dedicated scripts each time you need to react to a collision or trigger anymore.
+
 Call methods on any script thanks to the **UnityEvent** serialization power.
 
 ## CollisionEvent
