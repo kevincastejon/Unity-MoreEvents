@@ -5,6 +5,8 @@ Do not create dedicated scripts each time you need to react to a collision or tr
 
 Call methods on any script thanks to the **UnityEvent** serialization power.
 
+[Get the Unity package](https://github.com/kevincastejon/Unity-CollisionEvents/releases/tag/v1.0)
+
 ## CollisionEvent
 - **OnCollisionEnter**
 - **OnCollisionStay**
