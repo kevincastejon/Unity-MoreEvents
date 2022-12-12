@@ -2,7 +2,11 @@
 Provides **UnityEvent** for many Unity message methods, so it's easier to react without making a dedicated script every time.
 Call methods on any script thanks to the **UnityEvent** serialization power. 
 
+[See online documentation](https://kevincastejon.github.io/Unity-MoreEvents/)
+
 [Get the Unity package](https://github.com/kevincastejon/Unity-MoreEvents/releases/latest)
+
+[See my other Unity packages](https://assetstore.unity.com/publishers/46935)
 
 - **StartEvent** (OnStart)
 - **ActivationEvents** (OnActivated, OnDeactivated)
