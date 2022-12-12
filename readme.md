@@ -1,6 +1,6 @@
 # MoreEvents
 Provides **UnityEvent** for many Unity message methods, so it's easier to react without making a dedicated script every time.
-Call methods on any script thanks to the **UnityEvent** serialization power.
+Call methods on any script thanks to the **UnityEvent** serialization power. 
 
 [Get the Unity package](https://github.com/kevincastejon/Unity-MoreEvents/releases/tag/v1.0)
 
