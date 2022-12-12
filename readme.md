@@ -12,10 +12,10 @@ Call methods on any script thanks to the **UnityEvent** serialization power.
 - **TimerEvents** (OnProgress, OnTime, OnCompleted)
 
 
-![Cover](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Cover.png)
-![Tuto1](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto1.png)
-![Tuto2](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto2.png)
-![Tuto3](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto3.png)
-![Tuto4](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto4.png)
-![Tuto5](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto5.png)
-![Tuto6](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto6.png)
+![Cover](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Cover.png)
+![Tuto1](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto1.png)
+![Tuto2](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto2.png)
+![Tuto3](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto3.png)
+![Tuto4](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto4.png)
+![Tuto5](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto5.png)
+![Tuto6](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/Documentation/Tuto6.png)
