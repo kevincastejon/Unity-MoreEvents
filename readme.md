@@ -8,6 +8,8 @@ Call methods on any script thanks to the **UnityEvent** serialization power.
 
 [See my other Unity packages](https://assetstore.unity.com/publishers/46935)
 
+## Events list : 
+
 - **StartEvent** (OnStart)
 - **ActivationEvents** (OnActivated, OnDeactivated)
 - **UpdateEvents** (OnUpdate, OnFixedUpdate, OnLateUpdate)
