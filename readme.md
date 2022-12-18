@@ -26,3 +26,4 @@ Call methods on any script thanks to the **UnityEvent** serialization power.
 ![Tuto4](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto4.png)
 ![Tuto5](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto5.png)
 ![Tuto6](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto6.png)
+![Tuto7](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Tuto7.png)
