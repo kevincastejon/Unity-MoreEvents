@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace KevinCastejon.ActivationEvent
+namespace KevinCastejon.UpdateEvents
 {
     public class UpdateEvents : MonoBehaviour
     {

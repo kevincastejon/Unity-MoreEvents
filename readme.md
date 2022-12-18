@@ -1,6 +1,6 @@
 # MoreEvents
 Provides **UnityEvent** for many Unity message methods, so it's easier to react without making a dedicated script every time.
-Call methods on any script thanks to the **UnityEvent** serialization power. 
+Call methods on any script thanks to the **UnityEvent** serialization power.
 
 [See online documentation](https://kevincastejon.github.io/Unity-MoreEvents/)
 
@@ -8,14 +8,15 @@ Call methods on any script thanks to the **UnityEvent** serialization power.
 
 [See my other Unity packages](https://assetstore.unity.com/publishers/46935)
 
-## Events list : 
+## Events list :
 
 - **StartEvent** (OnStart)
 - **ActivationEvents** (OnActivated, OnDeactivated)
 - **UpdateEvents** (OnUpdate, OnFixedUpdate, OnLateUpdate)
 - **VisibleEvents** (OnBecameVisible, OnBecameInvisible)
-- **CollisionEvents** (OnTriggerEnter/Stay/Exit/2D, OnCollisionEnter/Stay/Exit/2D)
+- **KeyOrButtonEvents** (OnDown, OnUp)
 - **TimerEvents** (OnProgress, OnTime, OnCompleted)
+- **CollisionEvents** (OnTriggerEnter/Stay/Exit/2D, OnCollisionEnter/Stay/Exit/2D)
 
 
 ![Cover](https://kevincastejon.github.io/Unity-MoreEvents/Assets/KevinCastejon/MoreEvents/Documentation/Cover.png)

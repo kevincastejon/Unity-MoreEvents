@@ -1,5 +1,5 @@
 {
-    "name": "UpdateEventAssembly",
+    "name": "KeyOrButtonEventsAssembly",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
